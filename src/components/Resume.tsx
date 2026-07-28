@@ -1,0 +1,49 @@
+import './Resume.css'
+import { useState } from "react";
+import Education from "./ResumeContent/Edu"
+import Skills from "./ResumeContent/Skills"
+import WorkExp from "./ResumeContent/WorkExp"
+import Testimonials from "./ResumeContent/Testimonials";
+
+type TabName = 'skills' | 'workExperience' | 'education' | 'testimonials';
+
+type Tabs = {
+  id: TabName,
+  label: string
+}
+const tabNameArr: Tabs[] = [{ id: 'skills', label: 'Skills' }, { id: 'workExperience', label: 'Work Experience' }, { id: 'education', label: 'Education' }, { id: 'testimonials', label: "Testimonials" }]
+const Resume = () => {
+  const [activeTab, setActiveTab] = useState<TabName>('skills')
+
+  const getComponent = (id: TabName) => {
+    switch (id) {
+      case "skills":
+        return <Skills />
+      case "workExperience":
+        return <WorkExp />
+      case "education":
+        return <Education />
+      case "testimonials":
+        return <Testimonials />
+      default:
+        return <Skills />
+    }
+  }
+
+  return (
+    <section className="resume sectionVerticalRhythm" id="resume">
+      <p className="eyebrowLabel">Resume</p>
+      <h2>Skills & experience</h2>
+      <div className="tab">
+        {tabNameArr.map(({ id, label }) => <button key={id} className={`tablinks ${activeTab === id ? 'active' : ''}`} onClick={() => setActiveTab(id)}>{label}</button>)}
+      </div>
+      {tabNameArr.map(({ id }) => (
+        <div key={id} id={id} className={`tabcontent ${activeTab === id ? '' : 'hidden'}`}>
+          {getComponent(id)}
+        </div>
+      ))}
+    </section>
+  )
+}
+
+export default Resume

@@ -1,0 +1,159 @@
+aside {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside footer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-shrink: 0;
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  padding: 20px;
+  justify-content: space-between;
+}
+
+aside .socialLinks {
+  display: flex;
+  gap: 24px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 20px;
+  justify-self: end;
+}
+
+aside button,
+aside .logoButton {
+  cursor: pointer;
+}
+
+aside button {
+  border: none;
+  padding: 12px;
+}
+
+aside span {
+  display: none;
+}
+
+a.active svg {
+  color: var(--hero-text);
+  font-weight: 500;
+}
+
+.pill {
+  display: none;
+}
+
+aside .logoButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+}
+
+aside .logoButton img {
+  height: 24px;
+}
+
+aside .logoButton:hover {
+  background-color: var(--border2);
+}
+
+.personalDetails {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.personalDetails p:first-of-type {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.personalDetails .meta {
+  font-weight: 400;
+}
+
+@media (min-width: 781px) {
+  aside {
+    width: 260px;
+    height: calc(100vh - 40px);
+    max-height: calc(100vh - 96px);
+    padding: 56px 32px 40px;
+    position: fixed;
+  }
+
+  aside .socialLinks {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  aside span {
+    display: block;
+  }
+
+  aside button,
+  aside .logoButton {
+    font-size: 13px;
+    font-family: var(--sans);
+    height: 40px;
+  }
+
+  aside .logoButton {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    border: 1px solid var(--border2);
+    align-items: center;
+  }
+
+  aside .logoButton img {
+    height: 16px;
+  }
+
+  aside footer {
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+  }
+
+  nav {
+    justify-self: start;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  nav svg {
+    display: none;
+  }
+
+  .pill {
+    display: block;
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--border2);
+  }
+
+  a.active .pill {
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
+    border: 1px solid transparent;
+    background-color: var(--accent);
+  }
+}

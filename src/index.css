@@ -1,0 +1,199 @@
+:root {
+  --hero-text: #1c1b19; /*Ink (primary text*/
+  --text: #4a4438; /*body text*/
+  --muted-text: #8a8072; /*muted text*/
+  --bg: #faf8f4; /*background*/
+  --input-border: #ddd3c3; /*input border*/
+  --border: #eae3d7; /*dividers borders*/
+  --border2: #d8cfc0;
+  --accent: #8a5a3b; /*accent*/
+  --accent-h: #6e4830; /*accent hover*/
+  --text-selection: #e7d9c8; /*text-selection*/
+  --olive: #5a6b3f; /*leaf line olive*/
+
+  --sans: "Manrope", sans-serif;
+  --heading: "Instrument Serif", Serif;
+
+  font: 17px var(--sans);
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* GENERAL */
+#root {
+  width: 1326px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  scroll-snap-type: y proximity;
+}
+
+main {
+  padding: 36px 20px 80px;
+}
+
+h1,
+h2,
+.modalTitle {
+  font-family: var(--heading);
+  font-weight: 400;
+  color: var(--hero-text);
+}
+
+h1 {
+  margin-top: 16px;
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 16px;
+}
+
+h4 {
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+h5 {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--muted-text);
+  text-transform: capitalize;
+   border-radius: 8px;
+}
+
+a:hover {
+  color: var(--accent-h);
+}
+
+a.active {
+  color: var(--hero-text);
+  font-weight: 500;
+}
+
+button {
+  border-radius: 8px;
+}
+
+.meta {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--muted-text);
+}
+
+/* ABOUT SECTION */
+
+.about {
+  max-width: 620px;
+}
+
+/* PROJECTS SECTION */
+
+.projects {
+  max-width: 900px;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+  max-width: 640px;
+}
+
+.primaryButton {
+  background-color: var(--hero-text);
+  color: var(--border);
+}
+
+.primaryButton:hover {
+  color: var(--muted-text);
+}
+
+.modalTitle {
+  font-size: 32px;
+}
+
+.card,
+.modal {
+  border-radius: 10px;
+}
+
+.thumbnail {
+  height: 170px;
+}
+
+/* DECORATION */
+
+.leafUp {
+  color: var(--olive);
+  position: fixed;
+  top: -75px;
+  right: -100px;
+  opacity: 0.09;
+  z-index: -1;
+}
+
+.leafDown {
+  color: var(--accent);
+  position: fixed;
+  bottom: 0;
+  left: -50px;
+  opacity: 0.07;
+  z-index: -1;
+}
+
+@media (min-width: 781px) {
+  #root {
+    flex-direction: row;
+  }
+
+  main {
+    margin-left: 324px;
+    padding: 80px 64px 120px;
+    border-left: 1px solid var(--border);
+  }
+
+  .leafDown {
+    top: 220px;
+    left: 150px;
+  }
+}
+
+/* 400	Normal (Regular)
+500	Medium
+600	Semi Bold (Demi Bold) */
