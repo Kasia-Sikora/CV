@@ -1,0 +1,65 @@
+@use "../styles/mixins" as *;
+
+/* PROJECTS SECTION */
+
+.projects {
+  max-width: 900px;
+
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    .card {
+      max-width: 320px;
+      text-align: start;
+
+      h4 {
+        font-weight: 500;
+      }
+
+      img {
+        max-width: 100%;
+        height: 170px;
+
+        &.logo {
+          object-fit: none;
+        }
+      }
+
+      button {
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .cardContent {
+        min-height: 78px;
+        padding: 16px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        .cardHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+
+        p {
+          color: var(--text);
+          font-size: 13.5px;
+          text-align: start;
+        }
+
+        ul {
+          @include chip-list;
+          font-size: 11.5px;
+          color: var(--accent);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

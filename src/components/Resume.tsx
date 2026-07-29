@@ -1,4 +1,4 @@
-import './Resume.css'
+import './Resume.scss'
 import { useState } from "react";
 import Education from "./ResumeContent/Edu"
 import Skills from "./ResumeContent/Skills"

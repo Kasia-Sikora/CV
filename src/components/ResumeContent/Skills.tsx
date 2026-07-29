@@ -5,13 +5,13 @@ const Skills = () => {
         <h4 className="eyebrowLabel">HARD SKILLS</h4>
         <ul>
           <li>JavaScript</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>React</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Tailwind</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Sass</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Zustand</li>
         </ul>
       </div>
@@ -19,13 +19,13 @@ const Skills = () => {
         <h4 className="eyebrowLabel">SOFT SKILLS</h4>
         <ul>
           <li>Hardworking</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Relentless</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Dependable</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Team player</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Diligent</li>
         </ul>
       </div>
@@ -33,13 +33,13 @@ const Skills = () => {
         <h4 className="eyebrowLabel">DEV TOOLS</h4>
         <ul>
           <li>IntelliJ IDEA</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>WebStorm</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Visual Studio Code</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>GitHub</li>
-          <li>·</li>
+          <li aria-hidden="true">·</li>
           <li>Postman</li>
         </ul>
       </div>

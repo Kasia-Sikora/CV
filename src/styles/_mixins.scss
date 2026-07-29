@@ -1,0 +1,35 @@
+$bp-sm: 521px; // small — 2-column grids
+$bp-md: 781px; // desktop layout
+$bp-lg: 1025px; // large screens
+
+@mixin sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin chip-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  li:nth-of-type(even) {
+    font-size: 16px;
+    color: var(--muted-text);
+  }
+}

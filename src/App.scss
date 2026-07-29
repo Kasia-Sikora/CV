@@ -1,0 +1,19 @@
+@use "./styles/mixins" as *;
+
+section {
+  &.sectionVerticalRhythm {
+    margin-bottom: 64px;
+
+    @include desktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  .eyebrowLabel {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+}

@@ -1,0 +1,170 @@
+@use "../styles/mixins" as *;
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+
+  @include desktop {
+    position: fixed;
+    width: 260px;
+    height: calc(100vh - 40px);
+    max-height: calc(100vh - 96px);
+    padding: 56px 32px 40px;
+  }
+
+  span {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .personalDetails {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 20px;
+
+    p:first-of-type {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .meta {
+      font-weight: 400;
+    }
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    box-sizing: border-box;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 0 20px;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(28, 27, 25, 0.04);
+
+    a.active svg {
+      color: var(--hero-text);
+      font-weight: 500;
+    }
+
+    .pill {
+      display: none;
+    }
+
+    // roomier tap target on the mobile icon bar
+    a {
+      padding: 6px;
+    }
+
+    @include desktop {
+      position: static;
+      height: auto;
+      flex-direction: column;
+      align-items: start;
+      justify-self: start;
+      padding: 50px 0;
+      background-color: transparent;
+      border-bottom: none;
+      box-shadow: none;
+
+      svg {
+        display: none;
+      }
+
+      a {
+        padding: 0;
+
+        .pill {
+          display: block;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          border: 1px solid var(--border2);
+        }
+
+        &.active .pill {
+          border-color: transparent;
+          background-color: var(--accent);
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px;
+    border-top: 1px solid var(--border2);
+    border-bottom: 1px solid var(--border2);
+
+    @include desktop {
+      flex-direction: column;
+      gap: 16px;
+      border: none;
+    }
+
+    .socialLinks {
+      display: flex;
+      gap: 24px;
+
+      @include desktop {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      a {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+          background-color: var(--border2);
+        }
+
+        @include desktop {
+          height: 40px;
+          border: 1px solid var(--border2);
+          font-size: 13px;
+          font-family: var(--sans);
+        }
+      }
+
+      img {
+        height: 24px;
+
+        @include desktop {
+          height: 16px;
+        }
+      }
+    }
+
+    button {
+      @include desktop {
+        height: 40px;
+        font-size: 13px;
+        font-family: var(--sans);
+      }
+    }
+  }
+}

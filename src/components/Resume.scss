@@ -1,0 +1,128 @@
+@use "../styles/mixins" as *;
+
+.resume {
+  max-width: 680px;
+  font-size: 14px;
+
+  .tab {
+    border-bottom: 1px solid var(--border2);
+    display: flex;
+    gap: 32px;
+
+    button {
+      background-color: transparent;
+      color: var(--muted-text);
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 12px 0;
+      transition: 0.3s;
+      text-transform: capitalize;
+      font-size: 13.5px;
+
+      &:hover {
+        color: var(--accent);
+      }
+
+      &.active {
+        color: var(--hero-text);
+        text-shadow:
+          0 0 0.4px currentColor,
+          0 0 0.4px currentColor;
+        border-bottom: 2px solid var(--accent);
+      }
+    }
+  }
+
+  .tabcontent {
+    padding: 16px 0;
+    border: none;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  /* SKILLS */
+
+  .skills {
+    font-size: 13.5px;
+    display: grid;
+    grid-template:
+      "hardSkills softSkills"
+      "devTools     devTools";
+    column-gap: 70px;
+
+    .eyebrowLabel {
+      font-weight: 600;
+    }
+    div {
+      border-top: 1px solid var(--border);
+
+      &:first-of-type {
+        grid-area: hardSkills;
+      }
+
+      &:nth-of-type(2) {
+        grid-area: softSkills;
+      }
+
+      &:last-of-type {
+        grid-area: devTools;
+        margin-top: 32px;
+      }
+    }
+
+    ul {
+      @include chip-list;
+    }
+  }
+
+  /* WORK EXPERIENCE */
+
+  .weHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .position {
+    display: flex;
+    gap: 48px;
+    align-items: baseline;
+
+    .meta {
+      flex-shrink: 0;
+    }
+
+    ul {
+      margin-top: 8px;
+      padding-left: 16px;
+
+      li {
+        font-size: 13.5px;
+      }
+    }
+  }
+
+  /* EDUCATION */
+
+  .education {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h4 + div {
+      color: var(--accent);
+    }
+
+    blockquote {
+      margin-left: 0;
+
+      & ~ blockquote {
+        margin-top: 24px;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import About from './components/About'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <SideBar />
-      <LeafUp className="leafUp" />
-      <LeafDown className="leafDown" />
+      <LeafUp className="leaf up" aria-hidden="true" />
+      <LeafDown className="leaf down" aria-hidden="true" />
       <main>
         <About />
         <Resume />
