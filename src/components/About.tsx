@@ -7,10 +7,10 @@ const About = () => {
     <section id="about" className={`about sectionVerticalRhythm ${inView ? 'inView' : ''}`} ref={ref} >
       <p className="eyebrowLabel">About</p>
       <h1>Hello, I'm Kasia.</h1>
-      <p>I am a Java Fullstack Developer. My programming adventure started a year ago — today I mainly build with Java 11, Spring and Angular, with additional experience in Python, Flask, JavaScript and PostgreSQL. I'm always open to learning new technologies.</p>
+      <p>I'm a Frontend Developer who enjoys building accessible, carefully-crafted web interfaces with React and TypeScript. I came to development from a completely different field — and it's been the best decision I've made.</p>
 
       <h2 className="storyTitle">My story</h2>
-      <p>Most of my life I've been passionate about animals, from insects and reptiles to mammals, and I associated my work with this for years. For the last seven years I worked at a wholesaler, developing new fish species and creating the best conditions I could for them. I learned a lot, was promoted, and found real satisfaction in the work — but eventually felt ready for a new challenge, which is what led me to development.</p>
+      <p>For years my work revolved around animals — seven of them at a zoological wholesaler, where I worked my way up and cared for everything from reptiles to aquarium fish. Once I'd grown as far as I could there, I retrained as a developer at Codecool, and found the same thing I'd loved before: solving real problems and building something out of nothing.</p>
     </section>
   )
 }

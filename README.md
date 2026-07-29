@@ -1,77 +1,84 @@
-# React + TypeScript + Vite
+# Web CV — Katarzyna Sikora
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal CV / portfolio single-page app for **Katarzyna Sikora**, Frontend Developer. Interactive resume with an animated, accessible interface — a nicer way to read a CV than a static PDF.
 
-Currently, two official plugins are available:
+🔗 **Live:** _add your deployed URL here_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Web CV — desktop view with the sidebar navigation and About section](docs/desktop.png)
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Single-page layout** — About, Resume, Projects, and Contact, with a fixed sidebar on desktop that collapses to a top icon bar on mobile.
+- **Scroll-spy navigation** — the active section updates automatically as you scroll (`IntersectionObserver`).
+- **Scroll progress bar** along the content edge, and **fade/slide reveal** on sections as they enter and leave the viewport.
+- **Tabbed résumé** — Skills, Work Experience, and Education.
+- **Project modals** — built on the native `<dialog>` element, so focus-trapping, `Esc` to close, and focus restoration come from the browser. Includes a dedicated grid view for Frontend Mentor challenges.
+- **Working contact form** — submissions are relayed to the owner's inbox via [Formspree](https://formspree.io), with inline per-field validation errors and a success state.
+- **Accessibility** — built to WCAG 2.1 AA: labelled controls, visible focus rings, `aria-invalid`/`aria-describedby` on form errors, decorative graphics hidden from assistive tech, and all motion gated behind `prefers-reduced-motion`.
 
-Note: This will impact Vite dev & build performances.
+## Screenshots
 
-## Expanding the ESLint configuration
+| Résumé | Projects |
+| :---: | :---: |
+| ![Résumé tab showing skills and work experience](docs/resume.png) | ![Projects grid](docs/projects.png) |
+| **Project detail** | **Mobile** |
+| ![Open project detail modal](docs/modal.png) | ![Mobile view with the collapsed top-bar navigation](docs/mobile.png) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React 19** + **TypeScript**, with the **React Compiler** enabled
+- **Vite** (build/dev) + **vite-plugin-svgr** (import SVGs as components)
+- **SCSS** (`sass-embedded`), mobile-first with a shared breakpoint/mixin partial
+- **ESLint** (typescript-eslint + react-hooks)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev      # start the dev server (Vite)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The contact form needs a Formspree endpoint. Create a `.env` in the project root (it's git-ignored):
 
 ```
+VITE_FORM_URL=https://formspree.io/f/your-form-id
+```
+
+Get the ID by creating a form at [formspree.io](https://formspree.io). Without it, the site runs but the contact form won't submit.
+
+### Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the Vite dev server with HMR |
+| `npm run build` | Type-check (`tsc -b`) and build for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Project structure
+
+```
+src/
+├─ components/
+│  ├─ SideBar / About / Resume / Projects / Contact   # main sections
+│  ├─ Modal                                           # native <dialog> wrapper
+│  ├─ ResumeContent/                                  # skills, experience, education, tabs
+│  └─ ProjectsContent/                                # per-project modal content + data
+├─ hooks/            # useActiveSection (scroll-spy), useInView (reveal)
+├─ styles/           # _mixins.scss (breakpoints + shared mixins)
+├─ assets/           # images and SVG icons
+├─ App.tsx
+└─ index.scss        # design tokens (CSS custom properties) + globals
+```
+
+## Deployment
+
+It's a static SPA, so any static host works (Vercel, Netlify, GitHub Pages, …):
+
+```bash
+npm run build        # outputs to dist/
+```
+
+Deploy the `dist/` folder, and set `VITE_FORM_URL` as an environment variable in your host's build settings.

@@ -1,8 +1,11 @@
 @use "../styles/mixins" as *;
 
 .resume {
-  max-width: 680px;
   font-size: 14px;
+
+  @include desktop {
+    max-width: 680px;
+  }
 
   .tab {
     border-bottom: 1px solid var(--border2);
@@ -49,9 +52,17 @@
     font-size: 13.5px;
     display: grid;
     grid-template:
-      "hardSkills softSkills"
-      "devTools     devTools";
-    column-gap: 70px;
+      "hardSkills"
+      "softSkills"
+      "devTools";
+    row-gap: 20px;
+
+    @include desktop {
+      grid-template:
+        "hardSkills softSkills"
+        "devTools     devTools";
+      column-gap: 70px;
+    }
 
     .eyebrowLabel {
       font-weight: 600;
@@ -80,20 +91,57 @@
 
   /* WORK EXPERIENCE */
 
-  .weHeader {
+  .workExp {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 40px; // space between companies
+
+    .weHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+
+      @include desktop {
+        flex-direction: row;
+      }
+
+      .meta {
+        padding-bottom: 8px;
+      }
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 16px; // space between the company header and each role
+    }
   }
 
   .position {
     display: flex;
-    gap: 48px;
-    align-items: baseline;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 24px;
+      align-items: baseline;
+    }
+
+    h5 {
+      margin-top: 0;
+    }
 
     .meta {
       flex-shrink: 0;
+      color: var(--accent);
+
+      @include desktop {
+        width: 130px;
+        white-space: nowrap;
+        color: var(--muted-text);
+      }
     }
 
     ul {
