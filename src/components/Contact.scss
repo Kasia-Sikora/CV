@@ -14,7 +14,7 @@
     label {
       display: block;
       margin-bottom: 6px;
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 500;
     }
 
@@ -22,7 +22,7 @@
     textarea {
       width: 100%;
       box-sizing: border-box;
-      margin-bottom: 18px;
+      margin-bottom: 34px;
       padding: 12px 14px;
       background-color: #fff;
       border: 1px solid var(--input-border);
@@ -34,11 +34,37 @@
         outline: 2px solid var(--accent);
         outline-offset: 1px;
       }
+
+      &:has(+ .formError.field) {
+        margin-bottom: 4px;
+      }
     }
 
     textarea {
       min-height: 120px;
       resize: none;
+
+      &:has(+ .formSuccess) {
+        margin-bottom: 4px;
+      }
+    }
+
+    .formError {
+      color: #c52020;
+      font-size: 13px;
+      line-height: 18px;
+
+      &.field {
+        margin-bottom: 12px;
+      }
+    }
+
+    .formSuccess {
+      font-size: 13px;
+      line-height: 18px;
+      color: #5a6b3f;
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     button {

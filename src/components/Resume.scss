@@ -106,23 +106,11 @@
     }
   }
 
-  /* EDUCATION */
+  blockquote {
+    margin-left: 0;
 
-  .education {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    h4 + div {
-      color: var(--accent);
-    }
-
-    blockquote {
-      margin-left: 0;
-
-      & ~ blockquote {
-        margin-top: 24px;
-      }
+    & ~ blockquote {
+      margin-top: 24px;
     }
   }
 }

@@ -14,7 +14,7 @@ export function useActiveSection<T extends string>(ids: readonly T[]): T {
 }
 
 
-export function useInView<T extends Element>(rootMargin = '-15% 0px -15% 0px') {
+export function useInView<T extends Element>(rootMargin = '-10% 0px -10% 0px') {
   const ref = useRef<T>(null)
   const [inView, setInView] = useState(false)
 

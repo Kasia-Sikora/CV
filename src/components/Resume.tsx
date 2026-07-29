@@ -1,18 +1,17 @@
 import './Resume.scss'
 import { useState } from "react";
-import Education from "./ResumeContent/Edu"
 import Skills from "./ResumeContent/Skills"
 import WorkExp from "./ResumeContent/WorkExp"
 import Testimonials from "./ResumeContent/Testimonials";
 import { useInView } from '../hooks/useActiveSection';
 
-type TabName = 'skills' | 'workExperience' | 'education' | 'testimonials';
+type TabName = 'skills' | 'workExperience' | 'testimonials';
 
 type Tabs = {
   id: TabName,
   label: string
 }
-const tabNameArr: Tabs[] = [{ id: 'skills', label: 'Skills' }, { id: 'workExperience', label: 'Work Experience' }, { id: 'education', label: 'Education' }, { id: 'testimonials', label: "Testimonials" }]
+const tabNameArr: Tabs[] = [{ id: 'skills', label: 'Skills' }, { id: 'workExperience', label: 'Work Experience' }, { id: 'testimonials', label: "Testimonials" }]
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState<TabName>('skills')
@@ -24,8 +23,6 @@ const Resume = () => {
         return <Skills />
       case "workExperience":
         return <WorkExp />
-      case "education":
-        return <Education />
       case "testimonials":
         return <Testimonials />
       default:
