@@ -2,7 +2,7 @@
 
 A personal CV / portfolio single-page app for **Katarzyna Sikora**, Frontend Developer. Interactive resume with an animated, accessible interface — a nicer way to read a CV than a static PDF.
 
-🔗 **Live:** _add your deployed URL here_
+🔗 **Live:** https://cv-kasiasikoras-projects.vercel.app/
 
 ![Web CV — desktop view with the sidebar navigation and About section](docs/desktop.png)
 
@@ -18,11 +18,15 @@ A personal CV / portfolio single-page app for **Katarzyna Sikora**, Frontend Dev
 
 ## Screenshots
 
+Résumé and Projects:
+
 | Résumé | Projects |
 | :---: | :---: |
-| ![Résumé tab showing skills and work experience](docs/resume.png) | ![Projects grid](docs/projects.png) |
-| **Project detail** | **Mobile** |
-| ![Open project detail modal](docs/modal.png) | ![Mobile view with the collapsed top-bar navigation](docs/mobile.png) |
+| <img src="docs/resume.png" width="400" alt="Résumé tab — skills and experience"> | <img src="docs/projects.png" width="400" alt="Projects grid"> |
+
+| Project detail | Mobile |
+| :---: | :---: |
+| <img src="docs/modal.png" height="360" alt="Open project detail modal"> | <img src="docs/mobile.png" height="360" alt="Mobile view — collapsed top-bar navigation"> |
 
 ## Tech stack
 
