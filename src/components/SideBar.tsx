@@ -7,11 +7,12 @@ import PersonIcon from '../assets/person.svg?react'
 import DocIcon from '../assets/doc.svg?react'
 import ProjectsIcon from '../assets/projects.svg?react'
 import ContactIcon from '../assets/contact.svg?react'
+import EmailIcon from '../assets/mail-icon.svg?react'
 import { useActiveSection } from '../hooks/useActiveSection';
 
 type ActiveSection = 'about' | 'resume' | 'projects' | 'contact'
 
-const sections: ActiveSection[] = ['about', 'resume', 'projects', 'contact']
+const sections: ActiveSection[] = ['resume', 'projects', 'about', 'contact']
 
 const Sidebar = () => {
   const active: ActiveSection = useActiveSection(sections)
@@ -35,7 +36,7 @@ const Sidebar = () => {
     <aside className='sidebar'>
       <div>
         <div className="personalDetails">
-          <img src={photo} alt="Katarzyna Sikora" width={'64px'} height={'64px'} />
+          <img src={photo} alt="Katarzyna Sikora" />
           <div>
             <p>Katarzyna Sikora - Dywelska</p>
             <p className="meta">Frontend Developer</p>
@@ -48,6 +49,9 @@ const Sidebar = () => {
         </nav>
       </div>
       <footer className='sidebarFooter'>
+        <div className='quickContact'>
+          <a href="mailto:sikora.katarzyna.waw@gmail.com" aria-label="Email address"><EmailIcon aria-hidden="true" /><span>sikora.katarzyna.waw@gmail.com</span></a>
+        </div>
         <div className='socialLinks'>
           <a href="https://github.com/Kasia-Sikora" aria-label="GitHub"><img src={githubLogo} alt="" /><span>Github</span></a>
           <a href='https://www.linkedin.com/in/katarzyna-sikora/' aria-label="LinkedIn"><img src={linkedInLogo} alt="" /><span>LinkedIn</span></a>

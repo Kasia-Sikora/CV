@@ -6,6 +6,8 @@ import Arkanoid from './Arkanoid';
 import MemoryGame from './MemoryGame';
 import FrontendChallenges from './FrontendChallenges';
 import type { ReactElement } from 'react';
+import ListManager from './ListManager';
+import listManagerImg from '../../../docs/list-manager.png'
 
 type Project = {
   key: string;
@@ -20,6 +22,16 @@ type Project = {
 };
 
 export const projects: Project[] = [
+    {
+    key: 'list-manager',
+    title: 'Shopping List Manager',
+    date: 'In Progress',
+    description: 'An offline-first shopping list app with nested drag-and-drop items.',
+    stack: ['React 19','TypeScript','Vite','Zustand','idb (IndexedDB)','@dnd-kit','Tailwind CSS'],
+    img: listManagerImg,
+    alt: 'Shopping List Manager',
+    Content: ListManager,
+  },
   {
     key: 'cv',
     title: 'CV',

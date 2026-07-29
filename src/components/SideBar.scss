@@ -28,6 +28,16 @@ aside {
     gap: 16px;
     padding-bottom: 20px;
 
+    img {
+      width: 64px;
+      height: 64px;
+
+      @include desktop {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
     p:first-of-type {
       font-weight: 600;
       font-size: 15px;
@@ -119,7 +129,53 @@ aside {
     @include desktop {
       flex-direction: column;
       gap: 16px;
-      border: none;
+      padding: 24px 0 0;
+      border-bottom: none;
+    }
+
+    .quickContact {
+      position: fixed;
+      top: 0;
+      left: auto;
+      right: 0;
+      z-index: 20;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      padding: 10px 20px 10px 10px;
+      border-left: 1px solid var(--border);
+
+      @include desktop {
+        position: static;
+        flex-direction: column;
+        border-left: none;
+        padding: 0;
+      }
+
+      a {
+        text-transform: lowercase;
+        font-size: 13.5px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+          padding: 6px;
+          stroke: var(--muted-text);
+
+          @include desktop {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+          }
+        }
+
+        &:hover {
+          svg {
+            stroke: var(--accent-h);
+          }
+        }
+      }
     }
 
     .socialLinks {
@@ -129,6 +185,7 @@ aside {
       @include desktop {
         flex-direction: column;
         gap: 16px;
+        padding-top: 8px;
       }
 
       a {

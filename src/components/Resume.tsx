@@ -5,24 +5,24 @@ import WorkExp from "./ResumeContent/WorkExp"
 import Testimonials from "./ResumeContent/Testimonials";
 import { useInView } from '../hooks/useActiveSection';
 
-type TabName = 'skills' | 'workExperience' | 'testimonials';
+type TabName = 'workExperience' | 'skills' | 'testimonials';
 
 type Tabs = {
   id: TabName,
   label: string
 }
-const tabNameArr: Tabs[] = [{ id: 'skills', label: 'Skills' }, { id: 'workExperience', label: 'Work Experience' }, { id: 'testimonials', label: "Testimonials" }]
+const tabNameArr: Tabs[] = [{ id: 'workExperience', label: 'Work Experience' }, { id: 'skills', label: 'Skills' }, { id: 'testimonials', label: "Testimonials" }]
 
 const Resume = () => {
-  const [activeTab, setActiveTab] = useState<TabName>('skills')
+  const [activeTab, setActiveTab] = useState<TabName>('workExperience')
   const [ref, inView] = useInView<HTMLElement>()
 
   const getComponent = (id: TabName) => {
     switch (id) {
-      case "skills":
-        return <Skills />
       case "workExperience":
         return <WorkExp />
+      case "skills":
+        return <Skills />
       case "testimonials":
         return <Testimonials />
       default:
@@ -31,7 +31,7 @@ const Resume = () => {
   }
 
   return (
-    <section className={`resume sectionVerticalRhythm ${inView? 'inView': ''}`} id="resume" ref={ref}>
+    <section className={`resume sectionVerticalRhythm ${inView ? 'inView' : ''}`} id="resume" ref={ref}>
       <p className="eyebrowLabel">Resume</p>
       <h2>Skills & experience</h2>
       <div className="tab">

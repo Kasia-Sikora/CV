@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section id="about" className={`about sectionVerticalRhythm ${inView ? 'inView' : ''}`} ref={ref} >
       <p className="eyebrowLabel">About</p>
-      <h1>Hello, I'm Kasia.</h1>
+      <h2>About Me</h2>
       <p>I'm a Frontend Developer who enjoys building accessible, carefully-crafted web interfaces with React and TypeScript. I came to development from a completely different field — and it's been the best decision I've made.</p>
 
       <h2 className="storyTitle">My story</h2>

@@ -11,14 +11,15 @@ function App() {
 
   return (
     <>
-     <div className='scrollProgress'/>
+      <div className='scrollProgress' />
       <SideBar />
       <LeafUp className="leaf up" aria-hidden="true" />
       <LeafDown className="leaf down" aria-hidden="true" />
       <main>
-        <About />
+        <h1>Hello, I'm Kasia.</h1>
         <Resume />
         <Projects />
+        <About />
         <Contact />
       </main>
     </>
