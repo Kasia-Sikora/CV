@@ -1,100 +1,9 @@
-import { useState, useCallback, Fragment, type ReactElement } from 'react';
+import { useState, useCallback, Fragment } from 'react';
 import Modal from './Modal';
 import './Projects.scss';
-import Cv from './ProjectsContent/CV';
-import Foodstuff from './ProjectsContent/Foodstuff';
-import LifeOfAnts from './ProjectsContent/LifeOfAnts';
-import ApiWars from './ProjectsContent/ApiWars';
-import Arkanoid from './ProjectsContent/Arkanoid';
-import MemoryGame from './ProjectsContent/MemoryGame';
-import FrontendChallenges from './ProjectsContent/FrontendChallenges';
 
-type Project = {
-  key: string;
-  title: string;
-  date: string;
-  description: string;
-  stack: string[];
-  img: string;
-  alt: string;
-  isLogo?: boolean;
-  Content: () => ReactElement;
-};
-
-const projects: Project[] = [
-  {
-    key: 'cv',
-    title: 'CV',
-    date: 'Aug 2020',
-    description: 'Interactive resume site with animated sections.',
-    stack: ['HTML', 'CSS', 'Angular'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/Web-CV/master/src/assets/Screenshot.png',
-    alt: 'CV',
-    Content: Cv,
-  },
-  {
-    key: 'foodstuff',
-    title: 'FoodStuff',
-    date: 'Apr 2020',
-    description: 'Recipe-sharing app with user accounts and search.',
-    stack: ['Spring', 'Angular'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/ShoppingListDemo-UI/master/src/assets/screenshots/foodstuff1.png',
-    alt: 'Foodstuff',
-    Content: Foodstuff,
-  },
-  {
-    key: 'lifeofants',
-    title: 'Life of ants',
-    date: 'Mar 2020',
-    description: 'Desktop colony simulation exploring ant behaviour',
-    stack: ['Java FX'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/LifeOfAnts/master/src/main/resources/Screenshot.png',
-    alt: 'Life of ants',
-    Content: LifeOfAnts,
-  },
-  {
-    key: 'apiwars',
-    title: 'API Wars',
-    date: 'Oct 2019',
-    description: 'Data table pulling from public APIs.',
-    stack: ['Python', 'JavaScript', 'HTML', 'CSS'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/API-WARS/master/static/img/Screenshot.png',
-    alt: 'API Wars',
-    Content: ApiWars,
-  },
-  {
-    key: 'arkanoid',
-    title: 'Arkanoid',
-    date: 'Oct 2019',
-    description: 'A canvas-based Arkanoid clone with paddle physics and level progression.',
-    stack: ['JavaScript', 'CSS', 'HTML'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/arkanoid/master/static/img/Screenshot.png',
-    alt: 'Arkanoid',
-    Content: Arkanoid,
-  },
-  {
-    key: 'memorygame',
-    title: 'Memory Game',
-    date: 'Oct 2019',
-    description: 'Classic card-matching game.',
-    stack: ['JavaScript', 'Python'],
-    img: 'https://raw.githubusercontent.com/Kasia-Sikora/MemoryGame/master/MemoryGame.jpg',
-    alt: 'Memory Game',
-    Content: MemoryGame,
-  },
-  {
-    key: 'frontend-challenges',
-    title: 'Frontend Mentor Challenges',
-    date: '2020',
-    description:
-      'A collection of Frontend Mentor challenge solutions — responsive layouts built pixel-precise from design specs',
-    stack: ['JavaScript', 'SCSS', 'HTML'],
-    img: 'https://www.frontendmentor.io/images/logo-desktop.svg',
-    alt: 'Frontend Mentor logo',
-    isLogo: true,
-    Content: FrontendChallenges,
-  },
-];
+import { useInView } from '../hooks/useActiveSection';
+import { projects } from './ProjectsContent/ProjectsData';
 
 const projectsByKey = new Map(projects.map((project) => [project.key, project]));
 
@@ -109,10 +18,11 @@ const Projects = () => {
   const [selectedKey, setSelectedKey] = useState<string>();
   const selected = selectedKey ? projectsByKey.get(selectedKey) : undefined;
   const closeModal = useCallback(() => setSelectedKey(undefined), []);
+  const [ref, inView] = useInView<HTMLElement>()
 
   return (
     <>
-      <section className="projects sectionVerticalRhythm" id="projects">
+      <section className={`projects sectionVerticalRhythm ${inView? 'inView': ''}`} id="projects" ref={ref}>
         <p className="eyebrowLabel">Projects</p>
         <h2>Selected work</h2>
         <div className="cardsContainer">

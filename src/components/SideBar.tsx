@@ -1,5 +1,5 @@
 import './SideBar.scss'
-import { useState, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import githubLogo from "./../assets/github.png"
 import linkedInLogo from "./../assets/linkedin-icon-black.png"
 import photo from "./../assets/zdjecieCV.png"
@@ -7,14 +7,14 @@ import PersonIcon from '../assets/person.svg?react'
 import DocIcon from '../assets/doc.svg?react'
 import ProjectsIcon from '../assets/projects.svg?react'
 import ContactIcon from '../assets/contact.svg?react'
+import { useActiveSection } from '../hooks/useActiveSection';
 
 type ActiveSection = 'about' | 'resume' | 'projects' | 'contact'
 
 const sections: ActiveSection[] = ['about', 'resume', 'projects', 'contact']
 
 const Sidebar = () => {
-  const [activeSection, setActiveSection] = useState<ActiveSection>()
-
+  const active: ActiveSection = useActiveSection(sections)
 
   const getIcon = (section: ActiveSection): ReactElement => {
     switch (section) {
@@ -43,7 +43,7 @@ const Sidebar = () => {
         </div>
         <nav>
           {sections.map(section => (
-            <a href={`#${section}`} key={section} onClick={() => setActiveSection(section)} className={`${section === activeSection ? 'active' : ''}`} aria-label={section}><div className='pill' aria-hidden="true" />{getIcon(section)}<span>{section}</span></a>
+            <a href={`#${section}`} key={section} className={`${section === active ? 'active' : ''}`} aria-label={section}><div className='pill' aria-hidden="true" />{getIcon(section)}<span>{section}</span></a>
           ))}
         </nav>
       </div>

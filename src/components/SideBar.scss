@@ -64,7 +64,6 @@ aside {
       display: none;
     }
 
-    // roomier tap target on the mobile icon bar
     a {
       padding: 6px;
     }
@@ -98,6 +97,10 @@ aside {
         &.active .pill {
           border-color: transparent;
           background-color: var(--accent);
+        }
+
+        &:hover .pill {
+          border-color: var(--accent);
         }
       }
     }

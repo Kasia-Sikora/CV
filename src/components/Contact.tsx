@@ -1,14 +1,16 @@
 import { type SubmitEvent } from 'react'
 import './Contact.scss'
+import { useInView } from '../hooks/useActiveSection'
 
 const Contact = () => {
+  const [ref, inView] = useInView<HTMLElement>()
 
   const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault()
   }
 
   return (
-    <section className="contact" id="contact">
+    <section className={`contact ${inView ? 'inView' : ''}`} id="contact" ref={ref}>
       <p className="eyebrowLabel">CONTACT</p>
       <h2>Let's talk.</h2>
 
@@ -17,13 +19,13 @@ const Contact = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="fullname">Full Name</label>
         <input id="fullname" name="fullname" type="text" autoComplete="name" required />
-        
+
         <label htmlFor="email">Email</label>
         <input id="email" name="email" type="email" autoComplete="email" required />
-        
+
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows={4} required />
-        
+
         <button type="submit" className="primaryButton">Send message</button>
       </form>
     </section>

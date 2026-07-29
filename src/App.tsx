@@ -11,6 +11,7 @@ function App() {
 
   return (
     <>
+     <div className='scrollProgress'/>
       <SideBar />
       <LeafUp className="leaf up" aria-hidden="true" />
       <LeafDown className="leaf down" aria-hidden="true" />

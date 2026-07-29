@@ -1,6 +1,10 @@
+import { useInView } from "../hooks/useActiveSection"
+
 const About = () => {
+  const [ref, inView] = useInView<HTMLElement>()
+
   return (
-    <section id="about" className="about sectionVerticalRhythm" >
+    <section id="about" className={`about sectionVerticalRhythm ${inView ? 'inView' : ''}`} ref={ref} >
       <p className="eyebrowLabel">About</p>
       <h1>Hello, I'm Kasia.</h1>
       <p>I am a Java Fullstack Developer. My programming adventure started a year ago — today I mainly build with Java 11, Spring and Angular, with additional experience in Python, Flask, JavaScript and PostgreSQL. I'm always open to learning new technologies.</p>

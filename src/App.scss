@@ -17,3 +17,34 @@ section {
     letter-spacing: 0.14em;
   }
 }
+
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: scrollProgress linear;
+  animation-timeline: scroll(root block);
+}
+@keyframes scrollProgress {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  section {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1s ease, transform 1s ease;
+
+    &.inView {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
