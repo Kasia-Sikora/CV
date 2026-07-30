@@ -47,56 +47,58 @@ const Contact = () => {
   }
 
   return (
-    <section className={`contact ${inView ? 'inView' : ''}`} id="contact" ref={ref}>
-      <p className="eyebrowLabel">CONTACT</p>
-      <h2>Let's talk.</h2>
+    <section className='contact' id="contact" ref={ref}>
+      <div className={inView ? 'inView' : ''}>
+        <p className="eyebrowLabel">CONTACT</p>
+        <h2>Let's talk.</h2>
 
-      <p>Based near Warsaw, Poland — open to remote and on-site roles.</p>
+        <p>Based near Warsaw, Poland — open to remote and on-site roles.</p>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="fullname">Full Name</label>
-        <input
-          id="fullname"
-          name="fullname"
-          type="text"
-          autoComplete="name"
-          required
-          onFocus={() => setError(null)}
-          aria-invalid={error?.field === 'fullname' || undefined}
-          aria-describedby={error?.field === 'fullname' ? 'fullname-error' : undefined}
-        />
-        {error?.field === 'fullname' && <p id="fullname-error" className="formError field" role="alert">{error.message}</p>}
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="fullname">Full Name</label>
+          <input
+            id="fullname"
+            name="fullname"
+            type="text"
+            autoComplete="name"
+            required
+            onFocus={() => setError(null)}
+            aria-invalid={error?.field === 'fullname' || undefined}
+            aria-describedby={error?.field === 'fullname' ? 'fullname-error' : undefined}
+          />
+          {error?.field === 'fullname' && <p id="fullname-error" className="formError field" role="alert">{error.message}</p>}
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          onFocus={() => setError(null)}
-          aria-invalid={error?.field === 'email' || undefined}
-          aria-describedby={error?.field === 'email' ? 'email-error' : undefined}
-        />
-        {error?.field === 'email' && <p id="email-error" className="formError field" role="alert">{error.message}</p>}
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            onFocus={() => setError(null)}
+            aria-invalid={error?.field === 'email' || undefined}
+            aria-describedby={error?.field === 'email' ? 'email-error' : undefined}
+          />
+          {error?.field === 'email' && <p id="email-error" className="formError field" role="alert">{error.message}</p>}
 
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          required
-          onFocus={() => setError(null)}
-          aria-invalid={error?.field === 'message' || undefined}
-          aria-describedby={error?.field === 'message' ? 'message-error' : undefined}
-        />
-        {error?.field === 'message' && <p id="message-error" className="formError field" role="alert">{error.message}</p>}
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            required
+            onFocus={() => setError(null)}
+            aria-invalid={error?.field === 'message' || undefined}
+            aria-describedby={error?.field === 'message' ? 'message-error' : undefined}
+          />
+          {error?.field === 'message' && <p id="message-error" className="formError field" role="alert">{error.message}</p>}
 
-        {(error && !error.field) && <p className="formError" role="alert">{error.message}</p>}
-        {sent && <output className="formSuccess">Thanks — your message was sent.</output>}
+          {(error && !error.field) && <p className="formError" role="alert">{error.message}</p>}
+          {sent && <output className="formSuccess">Thanks — your message was sent.</output>}
 
-        <button type="submit" className="primaryButton">Send message</button>
-      </form>
+          <button type="submit" className="primaryButton">Send message</button>
+        </form>
+      </div>
     </section>
   )
 }

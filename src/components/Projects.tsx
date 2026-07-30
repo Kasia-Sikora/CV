@@ -22,32 +22,34 @@ const Projects = () => {
 
   return (
     <>
-      <section className={`projects sectionVerticalRhythm ${inView? 'inView': ''}`} id="projects" ref={ref}>
-        <p className="eyebrowLabel">Projects</p>
-        <h2>Selected work</h2>
-        <div className="cardsContainer">
-          {projects.map((project) => (
-            <div className="card" key={project.key}>
-              <button onClick={() => setSelectedKey(project.key)}>
-                <img src={project.img} alt="" className={project.isLogo ? 'logo' : undefined} />
-                <div className="cardContent">
-                  <div className="cardHeader">
-                    <h4>{project.title}</h4>
-                    <div className="meta">{project.date}</div>
+      <section className='projects sectionVerticalRhythm' id="projects" ref={ref}>
+        <div className={inView ? 'inView' : ''}>
+          <p className="eyebrowLabel">Projects</p>
+          <h2>Selected work</h2>
+          <div className="cardsContainer">
+            {projects.map((project) => (
+              <div className="card" key={project.key}>
+                <button onClick={() => setSelectedKey(project.key)}>
+                  <img src={project.img} alt="" className={project.isLogo ? 'logo' : undefined} />
+                  <div className="cardContent">
+                    <div className="cardHeader">
+                      <h4>{project.title}</h4>
+                      <div className="meta">{project.date}</div>
+                    </div>
+                    <p>{project.description}</p>
+                    <ul>
+                      {project.stack.map((tech, index) => (
+                        <Fragment key={tech}>
+                          {index > 0 && <li aria-hidden="true">·</li>}
+                          <li>{tech}</li>
+                        </Fragment>
+                      ))}
+                    </ul>
                   </div>
-                  <p>{project.description}</p>
-                  <ul>
-                    {project.stack.map((tech, index) => (
-                      <Fragment key={tech}>
-                        {index > 0 && <li aria-hidden="true">·</li>}
-                        <li>{tech}</li>
-                      </Fragment>
-                    ))}
-                  </ul>
-                </div>
-              </button>
-            </div>
-          ))}
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       {selected && (

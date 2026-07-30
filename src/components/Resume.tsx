@@ -31,17 +31,19 @@ const Resume = () => {
   }
 
   return (
-    <section className={`resume sectionVerticalRhythm ${inView ? 'inView' : ''}`} id="resume" ref={ref}>
-      <p className="eyebrowLabel">Resume</p>
-      <h2>Skills & experience</h2>
-      <div className="tab">
-        {tabNameArr.map(({ id, label }) => <button key={id} className={`tablinks ${activeTab === id ? 'active' : ''}`} onClick={() => setActiveTab(id)}>{label}</button>)}
-      </div>
-      {tabNameArr.map(({ id }) => (
-        <div key={id} id={id} className={`tabcontent ${activeTab === id ? '' : 'hidden'}`}>
-          {getComponent(id)}
+    <section className='resume sectionVerticalRhythm' id="resume" ref={ref}>
+      <div className={inView ? 'inView' : ''}>
+        <p className="eyebrowLabel">Resume</p>
+        <h2>Skills & experience</h2>
+        <div className="tab">
+          {tabNameArr.map(({ id, label }) => <button key={id} className={`tablinks ${activeTab === id ? 'active' : ''}`} onClick={() => setActiveTab(id)}>{label}</button>)}
         </div>
-      ))}
+        {tabNameArr.map(({ id }) => (
+          <div key={id} id={id} className={`tabcontent ${activeTab === id ? '' : 'hidden'}`}>
+            {getComponent(id)}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
