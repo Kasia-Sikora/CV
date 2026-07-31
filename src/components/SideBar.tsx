@@ -36,7 +36,7 @@ const Sidebar = () => {
     <aside className='sidebar'>
       <div>
         <div className="personalDetails">
-          <img src={photo} alt="Katarzyna Sikora" />
+          <img src={photo} alt="Katarzyna Sikora-Dywelska" />
           <div>
             <p>Katarzyna Sikora - Dywelska</p>
             <p className="meta">Frontend Developer</p>

@@ -1,6 +1,6 @@
-# Web CV — Katarzyna Sikora
+# Web CV — Katarzyna Sikora-Dywelska
 
-A personal CV / portfolio single-page app for **Katarzyna Sikora**, Frontend Developer. Interactive resume with an animated, accessible interface — a nicer way to read a CV than a static PDF.
+A personal CV / portfolio single-page app for **Katarzyna Sikora-Dywelska**, Frontend Developer. Interactive resume with an animated, accessible interface — a nicer way to read a CV than a static PDF.
 
 🔗[**Live Demo**](https://cv-beta-indol.vercel.app/)
 

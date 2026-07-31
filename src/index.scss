@@ -1,6 +1,8 @@
 @use "./styles/mixins" as *;
 
 :root {
+  color-scheme: only light;
+
   --hero-text: #1c1b19; /*Ink (primary text*/
   --text: #4a4438; /*body text*/
   --muted-text: #726a5c; /*muted text*/
@@ -166,8 +168,6 @@ button {
     line-height: 1.75;
   }
 }
-
-
 
 .primaryButton {
   background-color: var(--hero-text);
