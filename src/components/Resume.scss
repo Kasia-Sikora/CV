@@ -50,17 +50,11 @@
 
   .skills {
     font-size: 13.5px;
-    display: grid;
-    grid-template:
-      "hardSkills"
-      "softSkills"
-      "devTools";
-    row-gap: 20px;
+    columns: 1; 
+    column-gap: 3rem;
 
     @include desktop {
-      grid-template:
-        "hardSkills softSkills"
-        "devTools     devTools";
+      columns: 2; 
       column-gap: 70px;
     }
 
@@ -69,19 +63,8 @@
     }
     div {
       border-top: 1px solid var(--border);
-
-      &:first-of-type {
-        grid-area: hardSkills;
-      }
-
-      &:nth-of-type(2) {
-        grid-area: softSkills;
-      }
-
-      &:last-of-type {
-        grid-area: devTools;
-        margin-top: 32px;
-      }
+      break-inside: avoid; 
+      margin-bottom: 2rem;
     }
 
     ul {
@@ -116,6 +99,12 @@
       display: flex;
       flex-direction: column;
       gap: 16px; // space between the company header and each role
+
+      p {
+        font-size: 13.5px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
     }
   }
 

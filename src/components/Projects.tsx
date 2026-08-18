@@ -1,4 +1,4 @@
-import { useState, useCallback, Fragment } from 'react';
+import { useState, useCallback } from 'react';
 import Modal from './Modal';
 import './Projects.scss';
 
@@ -29,7 +29,7 @@ const Projects = () => {
           <div className="cardsContainer">
             {projects.map((project) => (
               <div className="card" key={project.key}>
-                <button onClick={() => setSelectedKey(project.key)}>
+                <button type="button" onClick={() => setSelectedKey(project.key)}>
                   <img src={project.img} alt="" className={project.isLogo ? 'logo' : undefined} />
                   <div className="cardContent">
                     <div className="cardHeader">
@@ -38,11 +38,8 @@ const Projects = () => {
                     </div>
                     <p>{project.description}</p>
                     <ul>
-                      {project.stack.map((tech, index) => (
-                        <Fragment key={tech}>
-                          {index > 0 && <li aria-hidden="true">·</li>}
-                          <li>{tech}</li>
-                        </Fragment>
+                      {project.stack.map(tech => (
+                          <li key={tech}>{tech}</li>
                       ))}
                     </ul>
                   </div>

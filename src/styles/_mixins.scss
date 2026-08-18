@@ -28,7 +28,9 @@ $bp-lg: 1025px; // large screens
   gap: 8px;
   flex-wrap: wrap;
 
-  li:nth-of-type(even) {
+  li:not(:last-child)::after {
+    content: "·";
+    margin-left: 0.5rem;
     font-size: 16px;
     color: var(--muted-text);
   }

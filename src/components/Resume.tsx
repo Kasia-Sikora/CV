@@ -36,7 +36,7 @@ const Resume = () => {
         <p className="eyebrowLabel">Resume</p>
         <h2>Skills & experience</h2>
         <div className="tab">
-          {tabNameArr.map(({ id, label }) => <button key={id} className={`tablinks ${activeTab === id ? 'active' : ''}`} onClick={() => setActiveTab(id)}>{label}</button>)}
+          {tabNameArr.map(({ id, label }) => <button type="button" key={id} className={`tablinks ${activeTab === id ? 'active' : ''}`} onClick={() => setActiveTab(id)}>{label}</button>)}
         </div>
         {tabNameArr.map(({ id }) => (
           <div key={id} id={id} className={`tabcontent ${activeTab === id ? '' : 'hidden'}`}>

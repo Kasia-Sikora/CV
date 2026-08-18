@@ -52,7 +52,7 @@ const Contact = () => {
         <p className="eyebrowLabel">CONTACT</p>
         <h2>Let's talk.</h2>
 
-        <p>Based near Warsaw, Poland — open to remote and on-site roles.</p>
+        <p>Based near Warsaw, Poland — open to remote and hybrid roles.</p>
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="fullname">Full Name</label>

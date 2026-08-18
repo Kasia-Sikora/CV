@@ -38,7 +38,7 @@ const Sidebar = () => {
         <div className="personalDetails">
           <img src={photo} alt="Katarzyna Sikora-Dywelska" />
           <div>
-            <p>Katarzyna Sikora - Dywelska</p>
+            <p>Katarzyna Sikora-Dywelska</p>
             <p className="meta">Frontend Developer</p>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Sidebar = () => {
           <a href="https://github.com/Kasia-Sikora" aria-label="GitHub"><img src={githubLogo} alt="" /><span>Github</span></a>
           <a href='https://www.linkedin.com/in/katarzyna-sikora/' aria-label="LinkedIn"><img src={linkedInLogo} alt="" /><span>LinkedIn</span></a>
         </div>
-        <button className="primaryButton">Download CV (PDF)</button>
+        <button type="button" className="primaryButton">Download CV (PDF)</button>
       </footer>
     </aside>
   )
