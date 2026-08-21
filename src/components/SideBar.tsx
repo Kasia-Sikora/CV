@@ -56,7 +56,8 @@ const Sidebar = () => {
           <a href="https://github.com/Kasia-Sikora" aria-label="GitHub"><img src={githubLogo} alt="" /><span>Github</span></a>
           <a href='https://www.linkedin.com/in/katarzyna-sikora/' aria-label="LinkedIn"><img src={linkedInLogo} alt="" /><span>LinkedIn</span></a>
         </div>
-        <button type="button" className="primaryButton">Download CV (PDF)</button>
+        <a className="primaryButton" href="/Katarzyna_Sikora-Dywelska_Frontend_Developer_CV.pdf"
+          download>Download CV (PDF)</a>
       </footer>
     </aside>
   )

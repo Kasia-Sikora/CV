@@ -170,11 +170,16 @@ button {
 }
 
 .primaryButton {
+  font-size: 13px;
+  font-family: var(--sans);
+  justify-content: center;
+  padding: 12px;
   background-color: var(--hero-text);
   color: var(--border);
 
   &:hover {
     background-color: #35322d;
+    color: var(--border);
   }
 }
 
