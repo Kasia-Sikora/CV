@@ -159,13 +159,8 @@ button {
     max-width: 620px;
   }
 
-  .storyTitle {
-    margin: 0;
-    padding: 32px 0 16px;
-    font-family: var(--sans);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.75;
+  p + p  {
+    margin-top: 20px;
   }
 }
 

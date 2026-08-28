@@ -8,10 +8,12 @@ const About = () => {
       <div className={inView ? 'inView' : ''}>
         <p className="eyebrowLabel">About</p>
         <h2>About Me</h2>
-        <p>I'm a Frontend Developer who enjoys building accessible, carefully-crafted web interfaces with React and TypeScript. I came to development from a completely different field — and it's been the best decision I've made.</p>
+        <p>I'm a Frontend Developer looking for a product that matters — <strong>HealthTech, EdTech, civic tech, animal welfare.</strong> If it makes someone's life tangibly better, I want to help build it.</p>
 
-        <h2 className="storyTitle">My story</h2>
-        <p>My work used to revolve around animals — seven years at a zoological wholesaler, where I worked my way up and cared for everything from reptiles to aquarium fish. Once I'd grown as far as I could there, I retrained as a developer at Codecool, and found the same thing I'd loved before: solving real problems and building something out of nothing.</p>
+        <p>I have <strong>4 years of commercial React and TypeScript</strong> experience. At The Stepstone Group I built candidate-facing features with a NestJS BFF. At PKO Bank Polski I worked on an internal design system. On my own time, I built an offline-first shopping list app with IndexedDB sync, drag-and-drop, and 250+ tests.</p>
+
+        <p>Before tech, I spent seven years at a zoological wholesaler, working my way up to <strong>domain specialist.</strong> I retrained as a developer and found the same thing I'd loved: going deep into a subject and building something real from scratch.</p>
+
       </div>
     </section>
   )
